@@ -9,3 +9,4 @@ import org.springframework.transaction.annotation.Transactional;
 @Repository
 public interface AccountRepository extends CrudRepository<AccountEntity, Integer> {
 }
+
