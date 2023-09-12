@@ -24,7 +24,7 @@ public interface BookRepository extends CrudRepository <BookEntity,Integer> {
     // isbn - 121131212
     List<BookEntity>findByPublishDateAfter (LocalDate date);
     // publish date is after 2015-12-12
-    List<BookEntity>findByNameNotIn (String name);
+    List<BookEntity>findByNameNot (String name);
     List<BookEntity>findByPublishDateBefore(LocalDate date);
     List<BookEntity>findByPriceGreaterThan(double price);
     List<BookEntity>deleteByNameAndAuthor(String name, String author);

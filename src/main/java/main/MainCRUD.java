@@ -98,12 +98,13 @@ public class MainCRUD {
             }
         }
     private static void updateBook(){
-        Optional<BookEntity> optionalBook = bookRepository.findById(4);
+        Optional<BookEntity> optionalBook = bookRepository.findById(1);
         if(optionalBook.isPresent()){
             BookEntity bookEntity = optionalBook.get();
             System.out.println("Book data before updating");
             System.out.println(bookEntity.toString());
 
+            bookEntity.setName("Java");
             bookEntity.setAuthor("Jame");
             bookEntity.setNumberOfPage(199);
             bookEntity.setPrice(100);
@@ -215,8 +216,8 @@ public class MainCRUD {
         }
     }
 //        Tìm sách ko chứa name Java
-        private static void findByNameNotIn(){
-        List<BookEntity> bookNameNotIn = bookRepository.findByNameNotIn("Java");
+        private static void findByNameNot(){
+        List<BookEntity> bookNameNotIn = bookRepository.findByNameNot("Java");
         if (!bookNameNotIn.isEmpty()){
             System.out.println("Find " + bookNameNotIn.size() + "book(s)");
             for(BookEntity bookEntity:bookNameNotIn){
@@ -259,5 +260,6 @@ public class MainCRUD {
 //        readBook();
 //        updateBook();
 //        deleteBook();
+//        findByNameNot();
     }
 }
