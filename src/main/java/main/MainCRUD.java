@@ -21,8 +21,8 @@ public class MainCRUD {
 
     private static void createNewBook(){
         BookEntity bookEntity = new BookEntity();
-        bookEntity.setName("Java A-Z");
-        bookEntity.setAuthor("Roger");
+        bookEntity.setName("Java");
+        bookEntity.setAuthor("John");
         bookEntity.setCategory("IT books");
         bookEntity.setIsbn("ISIBF1219323");
         bookEntity.setNumberOfPage(234);
@@ -245,12 +245,18 @@ public class MainCRUD {
             bookRepository.saveAll(bookPriceGreaterThan);
         }
         }
+        private static void deleteByNameAndAuthor(){
+        List<BookEntity> bookNameAndAuthor = bookRepository.deleteByNameAndAuthor("Java","John");
+        if (!bookNameAndAuthor.isEmpty()){
+            bookRepository.deleteAll(bookNameAndAuthor);
+        }
+        }
     public static void main (String[] args) {
 //        createNewBook();
 //        createNewBook2();
 //        createNewBook3();
 //        createNewBook4();
-        readBook();
+//        readBook();
 //        updateBook();
 //        deleteBook();
     }

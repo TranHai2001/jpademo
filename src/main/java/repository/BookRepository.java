@@ -27,5 +27,6 @@ public interface BookRepository extends CrudRepository <BookEntity,Integer> {
     List<BookEntity>findByNameNotIn (String name);
     List<BookEntity>findByPublishDateBefore(LocalDate date);
     List<BookEntity>findByPriceGreaterThan(double price);
+    List<BookEntity>deleteByNameAndAuthor(String name, String author);
 }
 
